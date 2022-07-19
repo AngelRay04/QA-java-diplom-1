@@ -18,16 +18,13 @@ public class IngredientTypeTest {
         this.actualType = actualType;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] setIngredient() {
-        return new Object[][]{
-                {"SAUCE", SAUCE},
-                {"FILLING", FILLING}
-        };
+        return new Object[][]{{"SAUCE", SAUCE}, {"FILLING", FILLING}};
     }
 
     @Test
     public void getIngredientTypeTest() {
-        Assert.assertEquals("Тип не соответствует",IngredientType.valueOf(expectedType), actualType);
+        Assert.assertEquals("Тип не соответствует", IngredientType.valueOf(expectedType), actualType);
     }
 }
